@@ -70,9 +70,10 @@ if __name__ == '__main__':
     print(res2.fetchall())
 
     res3 = cur.execute("""SELECT employees.position, contacts.type, contacts.value
+                        WHERE emplyees.id = 1
                         FROM contacts
                         FULL JOIN employees ON contacts.id=employees.id""")
-                        # WHERE emplyees.id = {id} - не понял как это должно заработать
+                        
     print(res3.fetchall())
 
 
